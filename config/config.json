@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "qwertyui",
+    "database": "TourDatabase",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "qwertyui",
+    "database": "TourDatabase_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "qwertyui",
+    "database": "TourDatabase_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
