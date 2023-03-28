@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Band.init({
+Band.init({
     band_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -40,6 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Band',
     tableName: 'bands',
     timestamps: false
-  });
+  })
+
   return Band;
 };
