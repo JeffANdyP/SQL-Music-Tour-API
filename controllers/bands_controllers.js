@@ -1,15 +1,16 @@
 //Dependencies 
 const bands = require('express').Router()
 const db = require('../models')
-const { Band } = db
+const { Band, MeetGreet } = db
 
 // Find All Bands
-bands.get('/', async (req, res) => {
+bands.get('/:name', async (req, res) => {
     try {
-        const foundBands = await Band.findAll({
-            order: [ [ 'available_start_time', 'ASC']],
+        const foundBands = await Band.findOne({
+            // order: [ [ 'available_start_time', 'ASC']],
             where: {
-                name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%`}
+                name: { name: req.params.name },
+                include: { model: MeetGreet, as: 'meet_greets'}
             }
         })
         res.status(200).json(foundBands)
